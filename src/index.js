@@ -22,8 +22,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       avatar={user.avatar}
       stats={user.stats}
     />
-    <Statistics />
-    {/* <FriendList />
-    <TransactionHistory /> */}
+    <Statistics stats={statistics} />
+    <FriendList friends={friends} />
+    <TransactionHistory transactions={transactions} />
   </React.StrictMode>
 );

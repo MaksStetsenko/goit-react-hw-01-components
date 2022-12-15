@@ -1,14 +1,12 @@
 import PropTypes from 'prop-types';
 
-import statistic from 'assets/data.json';
-
-export const Statistics = () => {
+export const Statistics = ({stats}) => {
   return (
     <section className="statistics">
       <h2 className="title">Upload stats</h2>
 
       <ul className="stat-list">
-        {statistic.map(stat => (
+        {stats.map(stat => (
           <li
             key={stat.id}
             className="item"
@@ -30,7 +28,7 @@ function getRandomHexColor() {
 Statistics.propTypes = {
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
     })
