@@ -1,6 +1,15 @@
 import PropTypes from 'prop-types';
 
-export const Profile =({
+import { Box } from '../Box';
+import {AvatarStyled,
+  NameStyled,
+  TagStyled,
+  LocationStyled,
+  StatsElementStyled,
+  LabelStyled,
+  QuantityStyled,} from './profile.styled'
+
+export const Profile = ({
   avatar,
   username,
   tag,
@@ -8,31 +17,45 @@ export const Profile =({
   stats: { followers, views, likes },
 }) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt={username} className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{locations}</p>
-      </div>
+    <Box
+    boxShadow="standart"
+      textAlign="center"
+      backgroundColor="secondary"
+      borderRadius="standart"
+      overflow="hidden"
+      width="300px"
+      height="100%"
+      marginRight="100px">
+      <Box p={5}>
+        <AvatarStyled src={avatar} alt={username}/>
+        <NameStyled>{username}</NameStyled>
+        <TagStyled>@{tag}</TagStyled>
+        <LocationStyled>{locations}</LocationStyled>
+      </Box>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <Box as="ul">
+        <StatsElementStyled>
+          <Box>
+            <LabelStyled>Followers</LabelStyled>
+            <QuantityStyled>{followers}</QuantityStyled>
+          </Box>
+        </StatsElementStyled>
+        <StatsElementStyled>
+          <Box>
+            <LabelStyled>Views</LabelStyled>
+            <QuantityStyled>{views}</QuantityStyled>
+          </Box>
+        </StatsElementStyled>
+        <StatsElementStyled>
+          <Box>
+            <LabelStyled>Likes</LabelStyled>
+            <QuantityStyled>{likes}</QuantityStyled>
+          </Box>
+        </StatsElementStyled>
+      </Box>
+    </Box>
   );
-}
+};
 
 Profile.propTypes = {
   avatar: PropTypes.string.isRequired,
