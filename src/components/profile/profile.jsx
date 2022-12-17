@@ -22,7 +22,6 @@ export const Profile = ({
       textAlign="center"
       backgroundColor="secondary"
       borderRadius="standart"
-      overflow="hidden"
       width="300px"
       height="100%"
       marginRight="100px">

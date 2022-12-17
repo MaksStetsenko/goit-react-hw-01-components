@@ -5,8 +5,6 @@ export const theme = {
   },
 
   colors: {
-    appBGColor: '#eaeeff',
-
     primary: 'black',
     secondary: 'white',
     third: '#8594a2',
@@ -15,14 +13,13 @@ export const theme = {
     userStatsBorder: '#e5eaf1',
     userStatsSocialTag: '#768696',
 
-    tableHead: '#6d94ff',
+    tableHead: 'skyblue',
     tableHeadText: 'white',
     tableEvenRowBG: '#f3f6f9',
     tableOddRowBG: '#ffffff',
     tableBodySeparator: '#e5eaf1',
 
-    friendListOnlineBG: '#f2fff4',
-    friendListOfflineBG: '#fff2f2',
+    friendList: 'lightgray',
     friendListOnlineStatus: 'green',
     friendListOfflineStatus: 'red',
 

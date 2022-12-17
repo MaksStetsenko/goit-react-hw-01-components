@@ -16,7 +16,6 @@ const statLength = stats.length;
       as="section"
       boxShadow="standart"
       borderRadius="standart"
-      overflow="hidden"
       width="350px"
       height="180px"
       marginBottom="100px"

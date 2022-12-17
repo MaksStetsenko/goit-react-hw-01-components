@@ -1,25 +1,35 @@
+
 import PropTypes from 'prop-types';
+
+import { Box } from 'components/Box';
+import { TableStyled, TableBodyStyled, TableHeadCellStyled, TableBodyCellStyled } from './transactions.styled'
+
 
 export const TransactionHistory = ({transactions}) => {
   return (
-      <table className="transaction-history">
-        <thead>
+      <TableStyled>
+        <Box
+      as="thead"
+      textTransform="uppercase"
+      letterSpacing="tableHeader"
+      backgroundColor="tableHead"
+      color="tableHeadText">
           <tr>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Currency</th>
+            <TableHeadCellStyled>Type</TableHeadCellStyled>
+            <TableHeadCellStyled>Amount</TableHeadCellStyled>
+            <TableHeadCellStyled>Currency</TableHeadCellStyled>
           </tr>
-        </thead>
-        <tbody>
+        </Box>
+        <TableBodyStyled>
           {transactions.map(transaction => (
           <tr key={transaction.id}>
-            <td>{transaction.type}</td>
-            <td>{transaction.amount}</td>
-            <td>{transaction.currency}</td>
+            <TableBodyCellStyled>{transaction.type}</TableBodyCellStyled>
+            <TableBodyCellStyled>{transaction.amount}</TableBodyCellStyled>
+            <TableBodyCellStyled>{transaction.currency}</TableBodyCellStyled>
           </tr>
           ))}
-        </tbody>
-      </table>
+        </TableBodyStyled>
+      </TableStyled>
   );
 };
 

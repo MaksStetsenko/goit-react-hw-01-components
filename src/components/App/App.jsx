@@ -7,12 +7,14 @@ import { Box } from '../Box';
 
 import { Profile } from 'components/profile/profile';
 import { Statistics } from 'components/statistics/statistics';
-import { FriendList } from 'components/friends/friends';
 import { TransactionHistory } from 'components/transactions/transactions';
+import { FriendList } from 'components/friends/friends';
 
 export const App = () => {
   return (
-    <Box display="flex">
+    <Box display="flex" padding="50px"
+    justifyContent="center"
+      alignItems="center">
       <Profile
         username={user.username}
         tag={user.tag}
