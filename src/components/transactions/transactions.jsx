@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 
 import { Box } from 'components/Box';
-import { TableStyled, TableBodyStyled, TableHeadCellStyled, TableBodyCellStyled } from './transactions.styled'
+import { TableStyled, TableBodyStyled, TableHeadCellStyled, TableBodyCellStyled } from './Transactions.styled'
 
 
 export const TransactionHistory = ({transactions}) => {
@@ -21,11 +21,11 @@ export const TransactionHistory = ({transactions}) => {
           </tr>
         </Box>
         <TableBodyStyled>
-          {transactions.map(transaction => (
-          <tr key={transaction.id}>
-            <TableBodyCellStyled>{transaction.type}</TableBodyCellStyled>
-            <TableBodyCellStyled>{transaction.amount}</TableBodyCellStyled>
-            <TableBodyCellStyled>{transaction.currency}</TableBodyCellStyled>
+          {transactions.map(({id, type, amount, currency}) => (
+          <tr key={id}>
+            <TableBodyCellStyled>{type}</TableBodyCellStyled>
+            <TableBodyCellStyled>{amount}</TableBodyCellStyled>
+            <TableBodyCellStyled>{currency}</TableBodyCellStyled>
           </tr>
           ))}
         </TableBodyStyled>
@@ -34,5 +34,12 @@ export const TransactionHistory = ({transactions}) => {
 };
 
 TransactionHistory.propTypes = {
-  transactions: PropTypes.array.isRequired,
-}
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      amount: PropTypes.string.isRequired,
+      currency: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};

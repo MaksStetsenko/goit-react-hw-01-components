@@ -7,7 +7,7 @@ import {AvatarStyled,
   LocationStyled,
   StatsElementStyled,
   LabelStyled,
-  QuantityStyled,} from './profile.styled'
+  QuantityStyled,} from './Profile.styled'
 
 export const Profile = ({
   avatar,

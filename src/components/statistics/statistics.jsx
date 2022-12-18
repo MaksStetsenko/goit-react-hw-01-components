@@ -6,11 +6,10 @@ import {
   StatItemStyled,
   LabelStyled,
   PercentageStyled,
-} from './statistics.styled';
+} from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
-const statLength = stats.length;
-
+  const statLength = stats.length;
   return (
     <Box
       as="section"
@@ -20,20 +19,19 @@ const statLength = stats.length;
       height="180px"
       marginBottom="100px"
       marginRight="100px"
-      >
+    >
       {title && <TitleStyled>{title}</TitleStyled>}
 
-      <Box as="ul"
+      <Box
+        as="ul"
         m={0}
         p={0}
         display="flex"
         justifyContent="space-between"
-        fontWeight="bold">
-        {stats.map(({ id, label, percentage}) => (
-          <StatItemStyled
-            key={id}
-            statLength={statLength}
-          >
+        fontWeight="bold"
+      >
+        {stats.map(({ id, label, percentage }) => (
+          <StatItemStyled key={id} statLength={statLength}>
             <LabelStyled>{label}</LabelStyled>
             <PercentageStyled>{percentage}%</PercentageStyled>
           </StatItemStyled>
